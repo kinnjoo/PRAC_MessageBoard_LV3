@@ -1,3 +1,5 @@
+const PostService = require("../services/posts.service");
+
 // Post의 컨트롤러 역할을 하는 클래스
 class PostsController {
   postService = new PostService(); // Post 서비스를 클래스를 컨트롤러 클래스의 멤버 변수로 할당
