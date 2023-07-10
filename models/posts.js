@@ -1,11 +1,5 @@
 'use strict';
 const { Model } = require('sequelize');
-
-/**
- * @param {import("sequelize").Sequelize} sequelize - Sequelize
- * @param {import("sequelize").DataTypes} DataTypes - Sequelize Column DataTypes
- * @return {Model} - Sequelize Model
- * **/
 module.exports = (sequelize, DataTypes) => {
   class Posts extends Model {
     /**
@@ -22,25 +16,23 @@ module.exports = (sequelize, DataTypes) => {
     {
       postId: {
         type: DataTypes.INTEGER,
-        allowNull: false, // NOT NULL, Null을 허용하지 않음
-        autoIncrement: true, // AUTO_INCREMENT
-        primaryKey: true, // PRIMARY KEY, 기본키
+        primaryKey: true,
+        required: true,
       },
       title: {
         type: DataTypes.STRING,
-        allowNull: false, // NOT NULL, Null을 허용하지 않음
+        required: true,
       },
       content: {
         type: DataTypes.STRING,
-        allowNull: true, // NULL
       },
       nickname: {
         type: DataTypes.STRING,
-        allowNull: false, // NOT NULL, Null을 허용하지 않음
+        required: true,
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false, // NOT NULL, Null을 허용하지 않음
+        required: true,
       },
     },
     {
